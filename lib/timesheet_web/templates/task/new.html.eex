@@ -1,0 +1,5 @@
+<h1>New Task</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.task_path(@conn, :create)) |> Map.put(:edit, false) %>
+
+<span><%= link "Back", to: Routes.worker_path(@conn, :index) %></span>

@@ -1,0 +1,24 @@
+<h2>Manager Login</h2>
+<style>
+  .block {
+    margin: 15px;
+    display: inline-block;
+    width: 200px;
+  }
+</style>
+
+<%= form_for @conn, Routes.sessionmanager_path(@conn, :create), fn f -> %>
+  <div class="form-group">
+    <div class="block">
+      <%= label f, :email %>
+      <%= text_input f, :email, class: "form-control" %>
+      <%= error_tag f, :email %>
+    </div>
+    <div class="block">
+      <%= label f, :password %>
+      <%= password_input f, :password, class: "form-control" %>
+      <%= error_tag f, :password %>
+    </div>
+    <%= submit "Log In", class: "btn btn-primary" %>
+  </div>
+<% end %>

@@ -1,0 +1,61 @@
+<style>
+  .row-list {
+    outline: thin solid;
+  }
+
+  table {
+    border-spacing: 10px;
+    border-collapse: separate;
+    width: 500px; 
+  }
+
+  td {
+    padding: 10px;
+    word-wrap: break-word;
+    max-width: 550px;
+  }
+
+</style>
+
+<h1>Tasks</h1>
+  (<%= link("Logout", to: Routes.sessionmanager_path(@conn, :delete),
+    method: :delete) %>)
+
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Hours</th>
+      <th>Description</th>
+      <th>Action</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for task <- @tasks do %>
+    <tr class="row-list">
+      <td><%= task.job_id %></td>
+      <td><%= task.hours %></td>
+      <td><%= task.description %></td>
+      <td>
+        <%= if task.status == false do %>
+          <span><%= link "Edit", to: Routes.task_path(@conn, :edit, task) %></span>
+        <% else %>
+        <span> Approved </span>
+        <% end %>
+      </td>
+    </tr>
+<% end %>
+<%= if Enum.count(@tasks) < 8 do %>
+  <%= for i <- 1..(8 - Enum.count(@tasks)) do %>
+  <tr class="row-list" >
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    </tr>
+  <% end %>
+<% end %>
+  </tbody>
+</table>

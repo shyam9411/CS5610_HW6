@@ -1,0 +1,44 @@
+    <style>
+      .block {
+        display: inline-block;
+        margin-left: 150px;
+        margin-top: 75px;
+      }
+
+      .link {
+        margin-left: 115px;
+      }
+
+      .login-container {
+        display: flex;
+        width: 1300px;
+      }
+    </style>
+    <div class="login-container">
+      <div class="col-4 text-light block">
+        <h1> Login as Manager </h1>
+          <%= if @current_user do %>
+            User: <%= @current_user.name %>
+            (<%= link("Logout", to: Routes.sessionmanager_path(@conn, :delete),
+              method: :delete) %>)
+          <% else %>
+          <div class="col-4 text-light link">
+            <%= link("Login", to: Routes.sessionmanager_path(@conn, :new)) %>
+          </div>
+          <% end %>
+        </div>
+
+
+        <div class="col-4 text-light block">
+        <h1> Login as Worker </h1>
+          <%= if @current_user do %>
+            User: <%= @current_user.name %>
+            (<%= link("Logout", to: Routes.sessionworker_path(@conn, :delete),
+              method: :delete) %>)
+          <% else %>
+          <div class="col-4 text-light link">
+            <%= link("Login", to: Routes.sessionworker_path(@conn, :new)) %>
+            </div>
+          <% end %>
+        </div>
+      </div>

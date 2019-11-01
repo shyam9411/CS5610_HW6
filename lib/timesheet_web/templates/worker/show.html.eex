@@ -1,0 +1,23 @@
+<h1>Show Worker</h1>
+
+<ul>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @worker.email %>
+  </li>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @worker.name %>
+  </li>
+
+  <li>
+    <strong>Password hash:</strong>
+    <%= @worker.password_hash %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.worker_path(@conn, :edit, @worker) %></span>
+<span><%= link "Back", to: Routes.worker_path(@conn, :index) %></span>

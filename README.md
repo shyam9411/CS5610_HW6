@@ -1,5 +1,15 @@
 # Timesheet
 
+The deployment steps and basic setup of ecto app was taken from the link - http://khoury.neu.edu/~ntuck/courses/2019/09/cs5610/notes/12-resources/notes.html
+
+## Attributions
+- https://hexdocs.pm/elixir/List.html
+- https://hexdocs.pm/elixir/Enum.html
+- https://hexdocs.pm/elixir/Map.html
+- https://getbootstrap.com/docs/4.3/content/tables/
+- https://getbootstrap.com/docs/4.3/utilities/spacing/
+
+## Design Decision
 This Repository contains the Timesheet application for two user groups namely managers and workers.
 
 - Worker gets to upload the timesheet by tagging a timesheet with a job id. Each job id is maintained by the manager and then a manager would approve of such requests.

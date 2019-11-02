@@ -18,6 +18,6 @@
   <%= error_tag f, :password_hash %>
 
   <div>
-    <%= submit "Save" %>
+    <%= submit "Save", class: "btn bn-primary mt-3" %>
   </div>
 <% end %>

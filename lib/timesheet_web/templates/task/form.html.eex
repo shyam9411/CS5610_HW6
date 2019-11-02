@@ -5,25 +5,31 @@
     </div>
   <% end %>
 
-  <%= label f, :jobCode %>
-  <%= text_input f, :jobCode %>
-  <%= error_tag f, :jobCode %>
+  <div class="row mt-5">
+    <%= label f, :jobCode, class: "col-md-1" %>
+    <%= text_input f, :jobCode, class: "col-md-2 ml-3" %>
+    <%= error_tag f, :jobCode %>
+    </div>
 
-  <%= if @edit == true do %>
-    <%= label f, :status %>
-    <%= checkbox f, :status %>
-    <%= error_tag f, :status %>
-  <% end %>
+  <div class="row mt-2">
+    <%= if @edit == true do %>
+      <%= label f, :status, class: "col-md-1"%>
+      <%= checkbox f, :status, class: "ml-3" %>
+      <%= error_tag f, :status %>
+    <% end %>
+    </div>
 
-  <%= label f, :hours %>
-  <%= number_input f, :hours %>
-  <%= error_tag f, :hours %>
+    <div class="row mt-2">
+    <%= label f, :hours, class: "col-md-1" %>
+    <%= number_input f, :hours, class: "col-md-2 ml-3" %>
+    <%= error_tag f, :hours %>
+    </div>
 
-  <%= label f, :description %>
-  <%= text_input f, :description %>
-  <%= error_tag f, :description %>
-
-  <div>
-    <%= submit "Save" %>
+  <div class="row mt-2">
+    <%= label f, :description, class: "col-md-1" %>
+    <%= text_input f, :description, class: "col-md-2 ml-3" %>
+    <%= error_tag f, :description %>
   </div>
+
+    <%= submit "Save", class: "btn btn-primary mt-5 px-4" %>
 <% end %>

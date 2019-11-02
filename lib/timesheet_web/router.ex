@@ -24,7 +24,7 @@ defmodule TimesheetWeb.Router do
     resources "/sessionmanager", SessionmanagerController, only: [:new, :create, :delete], singleton: true
     resources "/sessionworker", SessionworkerController, only: [:new, :create, :delete], singleton: true
     resources "/jobs", JobController, only: [:new, :create]
-    resources "/tasks", TaskController, only: [:new, :create, :edit]
+    resources "/tasks", TaskController, only: [:new, :create, :edit, :update]
   end
 
   # Other scopes may use custom stacks.

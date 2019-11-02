@@ -36,3 +36,5 @@ config :timesheet, TimesheetWeb.Endpoint,
 #
 # Then you can assemble a release by calling `mix release`.
 # See `mix help release` for more information.
+#
+ config :lens, TimesheetWeb.Endpoint, server: true

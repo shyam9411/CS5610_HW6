@@ -3,7 +3,7 @@ use Mix.Config
 # Configure your database
 config :timesheet, Timesheet.Repo,
   username: "timesheet",
-  password: "loiCh4Eep5ao",
+  password: "id6Chu8VuePe",
   database: "timesheet_dev",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
